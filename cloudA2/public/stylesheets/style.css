@@ -6,3 +6,40 @@ body {
 a {
   color: #00B7FF;
 }
+
+.searchContainer{
+  top:25%;
+  left: 35%;
+  position: relative;
+}
+
+.title{
+  left: 45%;
+  text-align: center;
+}
+
+.bar{
+  left: 45%;
+  top: 10%;
+}
+
+.submit{
+  position: relative;
+  left:45%;
+}
+
+.tweets{
+  position: relative;
+  border-width: thin;
+  border-style: inset;
+  width: 30%;
+  height: 50%;
+}
+
+.graphs{
+  position: relative;
+  left: 31%;
+  height: 50%;
+  border-width: medium;
+  border-style: dashed;
+}
