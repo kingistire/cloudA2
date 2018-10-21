@@ -2,7 +2,7 @@ var express = require('express')
   , app = express()
   , http = require('http')
   , server = http.createServer(app)
-  ,Twit = require('twit')
+  , Twit = require('twit')
   , io = require('socket.io').listen(server);
 
 var router = express.Router();
@@ -11,7 +11,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Tweeeeeeeeeeeeeeeeeeeets' });
 });
-\\
 
 router.post('/', function(req, res, next){
   var watchList = ['love', 'hate'];
@@ -24,17 +23,16 @@ router.post('/', function(req, res, next){
 
 io.sockets.on('connection', function (socket) {
   console.log('Connected');
-
-
  var stream = T.stream('statuses/filter', { track: watchList })
-
-  stream.on('tweet', function (tweet) {
-
+ stream.on('tweet', function (tweet) {
     io.sockets.emit('stream',tweet.text);
-
-
   });
  });
+
+ res.render('index', {
+   title: "Tweeter Analysis",
+ });
+
 });
 
 module.exports = router;

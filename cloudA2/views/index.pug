@@ -6,11 +6,12 @@ block content
       <h1>Tweet Analysis</h1>
       <br>
     div(class = 'searchContainer')
-      div(class = 'bar')
-        input(type="text" name="search" placeholder="Search for a hashtag!")
-        <br></br>
-      div(id = 'submit')
-        input(type="submit" name="submit")
+      form(action = '/' method = "post")
+        div(class = 'bar')
+          input(type="text" name="search" placeholder="Search for a hashtag!")
+          <br></br>
+        div(id = 'submit')
+          <input type='submit', value='Submit' id='btn'>
         <br></br>
     div(class = 'tweetsContainer')
       div(class = 'tweetd')
